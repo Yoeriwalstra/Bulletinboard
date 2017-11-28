@@ -1,0 +1,123 @@
+/*BODY*/
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin-left: 10px;
+	font-family: 'Arial';
+	font-style: italic;
+	font-size: 65px;
+}
+
+h3 {
+	width: 900px;
+	margin: 10 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+#spacer {
+	margin-top: 54px;
+}
+
+/*NAV BAR*/
+
+nav ul {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #f3f3f3;
+}
+
+nav li {
+/*Inline-block elements are like inline elements but they can have a width and a height. 
+Can be used instead of float (left). Float also requires the element that comes after it
+to be 'cleared'.*/
+	text-align: center;
+	font-family: ;
+	font-size: 20px;
+	float: right;
+	padding: 14px 25px;
+	border: 1px solid black;
+}
+
+nav li:hover {
+	background-color: #ddd;
+}
+
+nav li a {
+	display: inline-block;
+	color: #262626;
+}
+
+nav li a:active {
+	color: #fdfdfd;
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+nav li a:hover:not(:active) {
+    background-color: #ddd;
+}
+
+/*WRITE MSG FORM*/
+
+#titlemsg {
+	margin-top: 15px;
+	margin-left: 15px;
+	width: 500px;
+}
+
+#bodymsg {
+	margin-top: 15px;
+	margin-left: 15px;
+	width: 500px;
+	height: 300px;
+}
+
+input {
+	//margin: 1px;
+	padding: 0 0 0 0;
+	text-align: left;
+}
+
+#submitbtn {
+	margin-top: 15px;
+	margin-left: 15px;
+	padding: 7px;
+	font-size: 15px;
+}
+
+/*SHOW MSGS TABLE*/
+
+table {
+	width: 900px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+	list-style-type: none;
+	text-align: left;
+}
+
+td {
+	max-width: 500px;
+}
+
+td {
+	padding: 5px;
+	text-align: left;
+}

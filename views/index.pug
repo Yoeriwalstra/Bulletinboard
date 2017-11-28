@@ -1,0 +1,28 @@
+html
+	head
+		title Bulletinboard
+		script(src="https://code.jquery.com/jquery-3.2.1.js"
+				integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+				crossorigin="anonymous")
+
+	body
+		include navbar.pug
+		h1 Bulletinboard exercise
+
+		form(method="POST" action="sendmessage")
+			input(id="titlemsg" name="title" type=text, value="Title" onfocus="if (this.value=='Title') this.value='';")
+			br
+			textarea(id="bodymsg" name="message" type=text, value="Content" onfocus="if (this.value=='Content') this.value='';") Content
+			br
+			input(id="submitbtn" type="submit" value="submit")
+
+//- script.
+//- 	$(document).ready(function() {
+//- 		$('#submitbtn').click(function(e) {
+//- 			let title = $("#titlemsg").val()
+//- 			let message = $('#bodymsg').val()
+//- 			$.post("/sendmessage", {title: title, message: message}, (data) => {
+//- 				window.location.href = "http://localhost:3000/showmessage"
+//- 			})
+//- 		})
+//- 	})

@@ -1,0 +1,21 @@
+html
+	title Bulletinboard
+	script(src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous")
+		include custom.css
+	body
+		include navbar.pug
+
+		h1 Bulletinboard exercise
+
+		h3 All messages
+		
+		table
+			tr
+				th Message title
+				th Message content
+			-for (let i = 0; i < data.rows.length; i++)
+				tr 	
+					td #{data.rows[i].title}
+					td #{data.rows[i].body}
