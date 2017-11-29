@@ -22,7 +22,7 @@ Your postgres password (if present) must be read from an environment variable na
 
 This will allow Lieneke to grade your assignments without having to go into your code and change your connection string to her configuration.*/
 
-/*EXTRA CHALLENGE if you’re finished with the bulletinboard and the rest: Extendthe bulletinboard with a user table and associate 
+/*EXTRA CHALLENGE if you’re finished with the bulletinboard and the rest: Extend the bulletinboard with a user table and associate 
 (i.e. link/ set relation) themessages with posts. Make it possible to search for all the messages of a certainuser.*/
 
 const express = require('express');
@@ -50,6 +50,10 @@ app.get('/', (req, res) => {
 	res.render('index')
 })
 
+app.get('/signup', (req, res) => {
+	res.render('signup')
+})
+
 app.post("/sendmessage", (req, res) => {
 	let title = req.body.title
 	let body = req.body.message
@@ -68,6 +72,23 @@ app.post("/sendmessage", (req, res) => {
 			res.redirect('/showmessage')
 		}
 	})
+})
+
+
+app.post("/signupuser", (req, res) => {
+	let firstname = req.body.firstname
+	let lastname = req.body.lastname
+	let email = req.body.email
+	let password = req.body.password
+	
+	client.query(`INSERT INTO users (firstname, lastname, email, password) VALUES ('${firstname}', '${lastname}', '${email}', '${password}');`)
+		.then((result) => {
+			res.redirect('/')
+		})
+		.catch((err) => {
+			console.log(err)
+			res.status(500)
+		})
 })
 
 app.get('/showmessage', (req, res) => {

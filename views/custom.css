@@ -70,7 +70,22 @@ nav li a:hover:not(:active) {
     background-color: #ddd;
 }
 
+/*SIGN UP FORM*/
+#signupform {
+	margin-left: 10px;
+}
+
+#signupform input {
+	margin-top: 5px;
+}
+
 /*WRITE MSG FORM*/
+
+#useremail {
+	margin-top: 15px;
+	margin-left: 15px;
+	width: 300px;
+}
 
 #titlemsg {
 	margin-top: 15px;
