@@ -28,23 +28,25 @@ This will allow Lieneke to grade your assignments without having to go into your
 const express = require('express');
 const app = express();
 app.set('view engine', 'pug')
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:true}))
 const pg = require('pg')
 require('dotenv').load();
 const Client = pg.Client
+// const myOrm = require('./myOrm')
+//const client = myOrm.initialize()
+
+const client = new Client({
+	host: 'localhost',
+	username: process.env.pgusername,
+	password: process.env.password, 
+	database: process.env.database
+})
 
 //Make a .env file, install it in npm in the work directory (AND ADD IT TO YOUR .GITIGNORE, because it is meant to hide your password e.d.)
 // The client is a 'server-client'; Node.js making a request to a database.
-const client = new Client({
-	user: process.env.pgusername,
-	host: 'localhost',
-	database: process.env.database,
-	password: process.env.password,
-	port: 5432,
-})
 
-client.connect()
+// myOrm.initialize()
 
 app.get('/', (req, res) => {
 	res.render('index')
@@ -59,7 +61,6 @@ app.post("/sendmessage", (req, res) => {
 	let body = req.body.message
 	
 	const query = {
-		//-----------------------the variables used with string interpolation need 'single quotation marks' in SQL!!!
 		text: `INSERT INTO messages (title, body) VALUES ('${title}', '${body}');`
 	}
 
@@ -91,7 +92,27 @@ app.post("/signupuser", (req, res) => {
 		})
 })
 
+
+
+
+
+// function findAllMsgs(table, cb) {
+// 	client.query(`SELECT * FROM '${table}'`)
+// 	.then((result) => {
+// 		cb()
+// 	})
+// 	.catch((err) => {
+// 		console.log(err)
+// 	})
+// }
+
 app.get('/showmessage', (req, res) => {
+	// findAllMsgs('messages', function(result){
+	// 	console.log(result)
+	// 	res.render('showmessage',/*juiste pagina???*/ {data: result})
+	// })
+
+
 	const query1 = {text: 'SELECT * FROM messages;'}
 
 	client.query(query1, (err, result)=> {
@@ -99,12 +120,18 @@ app.get('/showmessage', (req, res) => {
 			res.status(500).end(err)
 		} else {
 			let msgs = result
+			console.log(msgs)
 			res.render('showmessage', {data: msgs})
 		}
 	})
 })
 
+
+
+
+
 /*SAME CODE AS ABOVE (app.get(/showmessage)) BUT WITH PROMISE!
+
 app.get('/showmessage', (req, res) => {
 	const query1 = {text: 'SELECT * FROM messages;'}
 	const query2 = {text: "SELECT title, body FROM messages WHERE title='Hi'"}
@@ -131,7 +158,7 @@ const query1 = "SELECT messages FROM blabla"
 const query2 = "blabla"
 
 	//client.query is promise-based.
-	client.query('SELECT * FROM users WHERE id=1') => {
+	client.query('SELECT * FROM users WHERE id=1')
 		.then((result) => {
 			console.log(result)
 			return "this is the result parameter for the second .then-function"
@@ -146,9 +173,19 @@ const query2 = "blabla"
 		.cath((error) => {
 			console.log(error)
 		})
-	}
 */
 
+
+/*myOrm.findMsgsById("messages", 2, (result) => {
+	//do something with result
+	//for example: console.log(result)
+})
+
+myOrm.findMsgsByUsername("messages", "Yoeri", (result) => {
+	//do something with result
+	//for example: console.log(result)
+})
+*/
 
 
 
