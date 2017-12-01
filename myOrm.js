@@ -1,16 +1,17 @@
 //NOT IN APP.JS???
 const pg = require('pg')
 const Client = pg.Client
+require('dotenv').load();
 
 
-const client = new Client({
+/*const client = new Client({
 	user: process.env.pgusername,
 	host: 'localhost',
 	database: process.env.database,
 	password: process.env.password,
 	port: 5432,
 })
-
+*/
 //EXAMPLE: THIS HAS TO GO INTO A MODULE (see filereader exercise) THAT CAN BE CALLED IN YOUR APP.JS
 module.exports = {
 	initialize: initialize(

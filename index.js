@@ -31,22 +31,24 @@ app.set('view engine', 'pug')
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:true}))
 const pg = require('pg')
-require('dotenv').load();
 const Client = pg.Client
+require('dotenv').load();
 // const myOrm = require('./myOrm')
 //const client = myOrm.initialize()
 
-const client = new Client({
+console.log("USERNAME", process.env.pgusername)
+const client = new Client({	
 	host: 'localhost',
-	username: process.env.pgusername,
-	password: process.env.password, 
-	database: process.env.database
+	username: "postgres",
+	password: "123Jurgen", 
+	database: "bulletinboard",
+	port: 5432
 })
+setTimeout(function(){client.connect()
+}, 2000)
 
 //Make a .env file, install it in npm in the work directory (AND ADD IT TO YOUR .GITIGNORE, because it is meant to hide your password e.d.)
 // The client is a 'server-client'; Node.js making a request to a database.
-
-// myOrm.initialize()
 
 app.get('/', (req, res) => {
 	res.render('index')
@@ -54,6 +56,17 @@ app.get('/', (req, res) => {
 
 app.get('/signup', (req, res) => {
 	res.render('signup')
+})
+
+app.get('/showmessage', (req, res) => {
+	client.query({text: 'SELECT * FROM messages;'}, (err, result)=> {
+		if (err) {
+			res.status(500).end(err)
+		} else {
+		console.log('hellooooo')
+		res.render('showmessage', {data: result})
+		}
+	})
 })
 
 app.post("/sendmessage", (req, res) => {
@@ -70,6 +83,7 @@ app.post("/sendmessage", (req, res) => {
 			res.status(500).end(err)
 		}
 		else {
+			console.log("!!!!!"+ result)
 			res.redirect('/showmessage')
 		}
 	})
@@ -92,10 +106,6 @@ app.post("/signupuser", (req, res) => {
 		})
 })
 
-
-
-
-
 // function findAllMsgs(table, cb) {
 // 	client.query(`SELECT * FROM '${table}'`)
 // 	.then((result) => {
@@ -106,29 +116,25 @@ app.post("/signupuser", (req, res) => {
 // 	})
 // }
 
-app.get('/showmessage', (req, res) => {
-	// findAllMsgs('messages', function(result){
-	// 	console.log(result)
-	// 	res.render('showmessage',/*juiste pagina???*/ {data: result})
-	// })
+// app.get('/showmessage', (req, res) => {
+// 	// findAllMsgs('messages', function(result){
+// 	// 	console.log(result)
+// 	// 	res.render('showmessage',/*juiste pagina???*/ {data: result})
+// 	// })
 
 
-	const query1 = {text: 'SELECT * FROM messages;'}
+// 	// const query1 = {text: 'SELECT * FROM messages'}
 
-	client.query(query1, (err, result)=> {
-		if (err) {
-			res.status(500).end(err)
-		} else {
-			let msgs = result
-			console.log(msgs)
-			res.render('showmessage', {data: msgs})
-		}
-	})
-})
-
-
-
-
+// 	// client.query({text: 'SELECT * FROM messages'}, (err, result)=> {
+// 	// 	if (err) {
+// 	// 		res.status(500).end(err)
+// 	// 	} else {
+// 	// 		let msgs = result
+// 	// 		console.log("yoyoyoyo")
+// 	// 		// res.redirect('showmessage', {data: msgs})
+// 		}
+// 	})
+// })
 
 /*SAME CODE AS ABOVE (app.get(/showmessage)) BUT WITH PROMISE!
 
