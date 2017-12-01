@@ -12,7 +12,7 @@ require('dotenv').load();
 	port: 5432,
 })
 */
-//EXAMPLE: THIS HAS TO GO INTO A MODULE (see filereader exercise) THAT CAN BE CALLED IN YOUR APP.JS
+
 module.exports = {
 	initialize: initialize(
 		client = new Client ({
