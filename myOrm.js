@@ -2,7 +2,7 @@
 const pg = require('pg')
 const Client = pg.Client
 require('dotenv').load();
-
+var client= {}
 
 /*const client = new Client({
 	user: process.env.pgusername,
@@ -14,36 +14,37 @@ require('dotenv').load();
 */
 
 module.exports = {
-	initialize: initialize(
-		client = new Client ({
-		host: "localhost", 
-		username: process.env.pgusername,
-		password: process.env.password, 
-		database: process.env.database
-	})),
+
+	initialize: function(connectionObject) {
+		client = new Client (connectionObject)
+		client.connect()
+		return client
+	},
+
 	findAllMsgs: function (table, cb) {
-		client.query(`SELECT * FROM '${table}'`)
+		client.query(`SELECT * FROM messages`)
 		.then((result) => {
-			res.render('showmessage', {data: result})
+			cb(result)
 		})
 		.catch((err) => {
 			console.log(err)
 		})
 	},
+
 	findMsgsById: function(table, id, cb) {
 		client.query(`SELECT * FROM '${table}' WHERE id = '${id}'`)
-		//return should be something like: {firstname: 'Sint', lastname: 'Klaas', email:'sint@sint.sint'}
 		.then((result) => {
-			res.render('showmessage', {data: result})
+			cb(result)
 		})
 		.catch((err) => {
 			console.log(err)
 		})
 	},
+
 	findMsgsByUsername: function(table, username, cb) {
 		client.query(`SELECT * FROM '${table}' WHERE username = '${username}'`)
 		.then((result) => {
-			res.render('showmessage', {data: result})
+			cb(result)
 		})
 		.catch((err) => {
 			console.log(err)
