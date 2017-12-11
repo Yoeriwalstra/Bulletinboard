@@ -1,11 +1,10 @@
 html
 	head
-	title Bulletinboard
-		include custom.css
+		title This is a blog now
 	body
 		include navbar.pug
 
-		h1 Bulletinboard exercise
+		h1 This is a blog now
 
 		h3 All messages
 		
@@ -17,3 +16,5 @@ html
 				tr 	
 					td #{data.rows[i].title}
 					td #{data.rows[i].body}
+	style
+		include custom.css

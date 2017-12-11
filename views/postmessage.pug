@@ -1,0 +1,15 @@
+html
+	head
+		title This is a blog now
+
+	body
+		include navbar.pug
+		
+		h1(id="blogtitle") This is a blog now
+
+		form(method="POST" action="postmessage")
+			input(id="titlemsg" name="title" type="text" value="Title" onfocus="if (this.value=='Title') this.value='';")
+			br
+			textarea(id="bodymsg" name="body" type="text" value="Content" onfocus="if (this.value=='Content') this.value='';") Content
+			br
+			input(id="submitbtn" type="submit" value="submit")

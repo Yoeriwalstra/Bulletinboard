@@ -1,12 +1,24 @@
 #spacer 
 
 nav
-	ul
+	if(user)
+		ul
 			li 
-				a(href="/showmessage") show msgs
+				a(href="/logout") log out
 			li
-				a(href="/") post msg
+				a(href="/postmessage") post msg
+			li
+				a(href="/profile") profile
+			li
+				a(href="/") home
+	else
+		ul
+			li
+				a(href="/login") log in
 			li
 				a(href="/signup") sign up
+			li
+				a(href="/") home
+
 style
 	include custom.css

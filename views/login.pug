@@ -1,0 +1,18 @@
+html
+	head
+		title This is a blog now
+	body
+		include navbar
+
+		h1(id="blogtitle") This is a blog now
+		
+		form(method="POST" action="login")
+			//- Indent input in form or it won't work!
+			input(type="text" name="username" value="Username")
+			br
+			input(type="password" name="password" value="Password")
+			br
+			input(type="submit" name="submit")
+
+style
+	include custom.css

@@ -5,12 +5,11 @@ module.exports = (app, client) =>{
 	})
 
 	app.post("/signup", (req, res) => {
-		let firstname = req.body.firstname
-		let lastname = req.body.lastname
 		let email = req.body.email
+		let username = req.body.username
 		let password = req.body.password
 		
-		client.query(`INSERT INTO users (firstname, lastname, email, password) VALUES ('${firstname}', '${lastname}', '${email}', '${password}');`)
+		client.query(`INSERT INTO users (email, username, password) VALUES ('${email}', '${username}', '${password}');`)
 			.then((result) => {
 				res.redirect('/')
 			})

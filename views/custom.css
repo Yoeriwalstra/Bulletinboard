@@ -5,27 +5,33 @@ body {
 	padding: 0;
 }
 
-h1 {
-	margin-left: 10px;
+#blogtitle {
+	width: 900px;
+	margin: 0 auto;
+	text-align: center;
 	font-family: 'Arial';
-	font-style: italic;
-	font-size: 65px;
+	font-size: 90px;
 }
 
 h3 {
 	width: 900px;
 	margin: 10 auto;
+	text-align: center;
 }
 
 a {
 	text-decoration: none;
 }
 
-#spacer {
-	margin-top: 54px;
+#searchbar {
+	float: right;
 }
 
 /*NAV BAR*/
+
+#spacer {
+	margin-top: 54px;
+}
 
 nav ul {
 	position: fixed;
@@ -117,22 +123,46 @@ input {
 
 table {
 	width: 900px;
-	margin: 0 auto;
-	margin-bottom: 20px;
+	margin: 20 auto;
 	border-collapse: collapse;
 }
 
-table, th, td {
-	border: 1px solid black;
+th, td {
+	border-bottom: 1px solid black;
 	list-style-type: none;
-	text-align: left;
 }
 
-td {
+th {
+	border-top: 1px solid black;
+}
+
+	/*TABLE HEADERS*/
+#thuser {
+	width: 150px;
+	border-right: 1px solid black;
+}
+
+#thtitle {
+	width: 150px;
+	border-right: 1px solid black;
+}
+
+#thmessage {
+
+}
+
+	/*TABLE DATA*/
+#tduser {
 	max-width: 500px;
+	padding: 5px;
+	text-align: center;
 }
 
-td {
-	padding: 5px;
-	text-align: left;
+#tdtitle {
+	text-align: center;
+}
+
+#tdmessage {
+	text-align: center;
+	padding-left: 5px;
 }
