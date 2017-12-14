@@ -3,22 +3,25 @@ html
 		title This is a blog now
 	body
 		include navbar.pug
-		input(id="searchbar" type="submit" value="search")
-		input(id="searchbar" type="text")
+
+
 
 		h1(id="blogtitle") This is a blog now
 
-		h3 All messages
+		h1(id="header2") All messages
 		
-		table
-			tr
-				th(id="thuser") User
-				th(id="thtitle") Title
-				th(id="thmessage") Message
-			-for (let i = 0; i < data.rows.length; i++)
-				tr 	
-					td(id="tduser") #{data.rows[i].username}
-					td(id="tdtitle") #{data.rows[i].title}
-					td(id="tdmessage") #{data.rows[i].body}
+		div(id="tablediv")
+			table(id="indextable")
+				tr
+					th(id="thuser") User
+					th(id="thtitle") Title
+					th(id="thmessage") Message
+				//- Make loop with i-- to inverse order of msgs???
+				-for (let i = 0; i < data.rows.length; i++)
+					tr 	
+						td(id="tduser") #{data.rows[i].username}
+						td(id="tdtitle") #{data.rows[i].title}
+						td(id="tdmessage") #{data.rows[i].body}
 	style
-		include custom.css
+		include ../custom/main.css
+		include ../custom/indexmsgtable.css

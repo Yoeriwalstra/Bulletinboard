@@ -1,0 +1,35 @@
+/*USER FORM*/
+
+#userform {
+	width: 450px;
+	margin: 10 auto;
+	text-align: center;
+	border: 3px solid #1a75ff;
+	box-shadow: 5px 5px 5px grey;
+}
+
+#userform input {
+	width: 400px;
+	height: 35px;
+	padding: 3 5;
+	margin-top: 20px;
+}
+
+#userform textarea {
+	width: 400px;
+	height: 300px;
+	padding: 3 5;
+	margin-top: 20px;
+}
+
+#userformbtn {
+	text-align: center;
+	background-color: #1a75ff;
+	color: white;
+	border: none;
+	margin-bottom: 20px;
+}
+
+#userformbtn:hover {
+	background-color: #0052cc;
+}

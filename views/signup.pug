@@ -4,13 +4,17 @@ html
 
 	body
 		include navbar.pug
-		h1 This is a blog now
-
-		form(method="POST" action="signup" id="signupform")
+		h1(id="blogtitle") This is a blog now
+		h1(id="header2") Sign up
+		form(method="POST" action="signup" id="userform")
 			input(name="email" type="text" value="Email" onfocus="if (this.value=='Email') this.value='';")
 			br
 			input(name="username" type="text", value="Username" onfocus="if (this.value=='Username') this.value='';")
 			br
 			input(name="password" type="password" value="Password" onfocus="if (this.value=='Password') this.value='';")
 			br
-			input(type="submit" value="submit")
+			input(id="userformbtn" type="submit" value="Submit")
+
+style
+	include ../custom/main.css
+	include ../custom/userform.css

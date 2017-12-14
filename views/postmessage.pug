@@ -6,10 +6,15 @@ html
 		include navbar.pug
 		
 		h1(id="blogtitle") This is a blog now
+		h1(id="header2") Write a message here
 
-		form(method="POST" action="postmessage")
-			input(id="titlemsg" name="title" type="text" value="Title" onfocus="if (this.value=='Title') this.value='';")
+		form(id="userform" method="POST" action="postmessage")
+			input(name="title" type="text" value="Title" onfocus="this.value='';")
 			br
-			textarea(id="bodymsg" name="body" type="text" value="Content" onfocus="if (this.value=='Content') this.value='';") Content
+			textarea(name="body" type="text" value="Content" onfocus="this.value='';") Content
 			br
-			input(id="submitbtn" type="submit" value="submit")
+			input(id="userformbtn" type="submit" value="submit")
+
+style
+	include ../custom/main.css
+	include ../custom/userform.css

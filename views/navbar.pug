@@ -11,6 +11,9 @@ nav
 				a(href="/profile") profile
 			li
 				a(href="/") home
+			form(method="POST" action="searchresult")
+				input(id="searchbarbtn" type="submit" value="search")
+				input(id="searchbarbar" type="text" name="suggestion" value="Search post title or user" onfocus="this.value='';")
 	else
 		ul
 			li
@@ -19,6 +22,9 @@ nav
 				a(href="/signup") sign up
 			li
 				a(href="/") home
+			form(method="POST" action="searchresult")
+				input(id="searchbarbtn" type="submit" value="search")
+				input(id="searchbarbar" type="text" name="suggestion" value="Search post title or user" onfocus="this.value='';")
 
 style
-	include custom.css
+	include ../custom/navbar.css

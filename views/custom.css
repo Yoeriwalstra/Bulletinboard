@@ -19,71 +19,51 @@ h3 {
 	text-align: center;
 }
 
-a {
-	text-decoration: none;
-}
-
-#searchbar {
-	float: right;
-}
-
-/*NAV BAR*/
-
-#spacer {
-	margin-top: 54px;
-}
-
-nav ul {
-	position: fixed;
-	top: 0px;
-	width: 100%;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background-color: #f3f3f3;
-}
-
-nav li {
-/*Inline-block elements are like inline elements but they can have a width and a height. 
-Can be used instead of float (left). Float also requires the element that comes after it
-to be 'cleared'.*/
+#header2 {
+	width: 900px;
+	margin: 0 auto;	
 	text-align: center;
-	font-family: ;
-	font-size: 20px;
-	float: right;
-	padding: 14px 25px;
-	border: 1px solid black;
-}
-
-nav li:hover {
-	background-color: #ddd;
-}
-
-nav li a {
-	display: inline-block;
-	color: #262626;
-}
-
-nav li a:active {
-	color: #fdfdfd;
-}
-
-nav li a:hover {
-	text-decoration: underline;
-}
-
-nav li a:hover:not(:active) {
-    background-color: #ddd;
 }
 
 /*SIGN UP FORM*/
+
+
 #signupform {
-	margin-left: 10px;
+	width: 400px;
+	height: 250px;
+	margin: 10 auto;
+	text-align: center;
+	border: 3px solid #1a75ff;
+	box-shadow: 5px 5px 5px grey;
 }
 
 #signupform input {
+	width: 350px;
+	height: 35px;
+	padding: 3 5;
+	margin-top: 20px;
+}
+
+#signupsubmit {
+	text-align: center;
+	background-color: #1a75ff;
+	color: white;
+	border: none;
+}
+
+#signupsubmit:hover {
+	background-color: #0052cc;
+}
+
+/*LOG IN FORM*/
+#loginform {
+	margin-left: 10px;
+}
+
+#loginform input {
 	margin-top: 5px;
 }
+
 
 /*WRITE MSG FORM*/
 
@@ -116,7 +96,7 @@ input {
 	margin-top: 15px;
 	margin-left: 15px;
 	padding: 7px;
-	font-size: 15px;
+	font-size: 13px;
 }
 
 /*SHOW MSGS TABLE*/
@@ -129,22 +109,21 @@ table {
 
 th, td {
 	border-bottom: 1px solid black;
-	list-style-type: none;
+	text-align: center;
 }
 
 th {
 	border-top: 1px solid black;
 }
 
-	/*TABLE HEADERS*/
-#thuser {
+	/*INDEX TABLE*/
+		/*TABLE HEADERS*/
+#indextable #thuser {
 	width: 150px;
-	border-right: 1px solid black;
 }
 
-#thtitle {
+#indextable #thtitle {
 	width: 150px;
-	border-right: 1px solid black;
 }
 
 #thmessage {
@@ -155,14 +134,10 @@ th {
 #tduser {
 	max-width: 500px;
 	padding: 5px;
-	text-align: center;
 }
 
 #tdtitle {
-	text-align: center;
 }
 
 #tdmessage {
-	text-align: center;
-	padding-left: 5px;
 }

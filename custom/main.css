@@ -1,0 +1,23 @@
+/*BODY*/
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#blogtitle {
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: center;
+	font-family: 'Arial';
+	font-size: 90px;
+}
+
+#header2 {
+	width: 900px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+	font-style: italic;
+}

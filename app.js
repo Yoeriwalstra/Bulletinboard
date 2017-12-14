@@ -35,10 +35,11 @@ require("./routes/signup.js")(app, client)
 require("./routes/login.js")(app, client)
 require("./routes/profile.js")(app, client)
 require("./routes/postmessage.js")(app, client)
+require("./routes/searchresult.js")(app, client)
 require("./routes/logout.js")(app)
 
 
 
-let server = app.listen(3000, () => {
-	console.log('Listening at port 3000')
+let server = app.listen(process.env.webport, () => {
+	console.log(`Listening at port ${process.env.webport}`)
 });

@@ -1,0 +1,58 @@
+/*SHOW MSGS TABLE*/
+#tablediv {
+	position: relative;
+	width: 900px;
+	margin: 20 auto;
+	border: 3px solid #1a75ff;
+	box-shadow: 5px 5px 5px grey;
+}
+
+table {
+	position: relative;
+	margin: 21 auto;
+	text-align: center;
+	width: 95%;
+	padding; 30px;
+	background-color: #EAEFFF;
+	border-collapse: collapse;
+}
+
+tbody {
+	margin: 10px;
+}
+
+th, td {
+	border-bottom: 1px solid black;
+	text-align: center;
+	font-family: verdana, sans serif;
+}
+
+th {
+	border-top: 1px solid black;
+}
+
+#thuser {
+	width: 150px;
+	padding: 5px;
+}
+
+#thtitle {
+	width: 150px;
+	padding: 8px;
+}
+
+#thmessage {
+	padding: 5px;
+}
+
+	/*TABLE DATA*/
+#tduser {
+	max-width: 500px;
+}
+
+#tdtitle {
+}
+
+#tdmessage {
+	font-family: courier new, monospace;
+}

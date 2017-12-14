@@ -1,0 +1,74 @@
+#spacer {
+	margin-top: 54px;
+}
+
+nav ul {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #f3f3f3;
+}
+
+nav li {
+/*Inline-block elements are like inline elements but they can have a width and a height. 
+Can be used instead of float (left). Float also requires the element that comes after it
+to be 'cleared'.*/
+	text-align: center;
+	font-family: ;
+	font-size: 20px;
+	float: right;
+	padding: 14px 25px;
+	border-left: 1px solid black;
+}
+
+nav li:hover {
+	background-color: #ddd;
+}
+
+nav li a {
+	display: inline-block;
+	color: #262626;
+}
+
+nav li a:active {
+	color: #fdfdfd;
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+nav li a:hover:not(:active) {
+    background-color: #ddd;
+}
+
+a {
+	text-decoration: none;
+}
+
+#searchbarbar {
+	display; Inline-block;
+	float: right;
+	width: 300px;
+	margin-top: 7px;
+	margin-right: 15px;
+	padding: 8px;
+}
+
+#searchbarbtn {
+	display; Inline-block;
+	float: right;
+	margin-top: 7px;
+	margin-right: 15px;
+	padding: 10px;
+	border: none;
+	background-color: #1a75ff;
+	color: white;
+}
+
+#searchbarbtn:hover {
+	background-color: #0052cc;
+}

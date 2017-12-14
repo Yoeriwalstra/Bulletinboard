@@ -5,14 +5,16 @@ html
 		include navbar
 
 		h1(id="blogtitle") This is a blog now
+		h1(id="header2") Log in
 		
-		form(method="POST" action="login")
+		form(id="userform" method="POST" action="login")
 			//- Indent input in form or it won't work!
-			input(type="text" name="username" value="Username")
+			input(type="text" name="username" value="Username" onfocus="this.value='';")
 			br
-			input(type="password" name="password" value="Password")
+			input(type="password" name="password" value="Password" onfocus="this.value='';")
 			br
-			input(type="submit" name="submit")
+			input(id="userformbtn" type="submit" name="submit" value="Log in")
 
 style
-	include custom.css
+	include ../custom/main.css
+	include ../custom/userform.css
