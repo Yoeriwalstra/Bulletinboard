@@ -1,59 +1,4 @@
-/*BODY*/
 
-body {
-	margin: 0;
-	padding: 0;
-}
-
-#blogtitle {
-	width: 900px;
-	margin: 0 auto;
-	text-align: center;
-	font-family: 'Arial';
-	font-size: 90px;
-}
-
-h3 {
-	width: 900px;
-	margin: 10 auto;
-	text-align: center;
-}
-
-#header2 {
-	width: 900px;
-	margin: 0 auto;	
-	text-align: center;
-}
-
-/*SIGN UP FORM*/
-
-
-#signupform {
-	width: 400px;
-	height: 250px;
-	margin: 10 auto;
-	text-align: center;
-	border: 3px solid #1a75ff;
-	box-shadow: 5px 5px 5px grey;
-}
-
-#signupform input {
-	width: 350px;
-	height: 35px;
-	padding: 3 5;
-	margin-top: 20px;
-}
-
-#signupsubmit {
-	text-align: center;
-	background-color: #1a75ff;
-	color: white;
-	border: none;
-}
-
-#signupsubmit:hover {
-	background-color: #0052cc;
-}
 
 /*LOG IN FORM*/
 #loginform {
@@ -65,39 +10,7 @@ h3 {
 }
 
 
-/*WRITE MSG FORM*/
 
-#useremail {
-	margin-top: 15px;
-	margin-left: 15px;
-	width: 300px;
-}
-
-#titlemsg {
-	margin-top: 15px;
-	margin-left: 15px;
-	width: 500px;
-}
-
-#bodymsg {
-	margin-top: 15px;
-	margin-left: 15px;
-	width: 500px;
-	height: 300px;
-}
-
-input {
-	//margin: 1px;
-	padding: 0 0 0 0;
-	text-align: left;
-}
-
-#submitbtn {
-	margin-top: 15px;
-	margin-left: 15px;
-	padding: 7px;
-	font-size: 13px;
-}
 
 /*SHOW MSGS TABLE*/
 

@@ -2,12 +2,13 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended:true}))
 const session = require('express-session')
 const pg = require('pg')
 const Client = pg.Client
 require('dotenv').load();
 app.set('view engine', 'pug')
-app.use(bodyParser.urlencoded({extended:true}))
+const bcrypt = require('bcrypt')
 
 //Create new client object 
 const client = new Client({	
@@ -31,8 +32,8 @@ client.connect()
 app.use(session(sess))
 	
 require("./routes/index.js")(app, client)
-require("./routes/signup.js")(app, client)
-require("./routes/login.js")(app, client)
+require("./routes/signup.js")(app, client, bcrypt)
+require("./routes/login.js")(app, client, bcrypt)
 require("./routes/profile.js")(app, client)
 require("./routes/postmessage.js")(app, client)
 require("./routes/searchresult.js")(app, client)

@@ -1,19 +1,40 @@
 html
 	head
 		title This is a blog now
-
+		script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
 	body
 		include navbar.pug
 		h1(id="blogtitle") This is a blog now
 		h1(id="header2") Sign up
 		form(method="POST" action="signup" id="userform")
-			input(name="email" type="text" value="Email" onfocus="if (this.value=='Email') this.value='';")
+			input(id="email" name="email" type="text" placeholder="Email")
 			br
-			input(name="username" type="text", value="Username" onfocus="if (this.value=='Username') this.value='';")
+			input(id="username" name="username" type="text", placeholder="Username")
 			br
-			input(name="password" type="password" value="Password" onfocus="if (this.value=='Password') this.value='';")
+			input(id="password" name="password" type="password" placeholder="Password")
+			br
+			input(id="passwordCheck" type="password" placeholder="Validate password")
 			br
 			input(id="userformbtn" type="submit" value="Submit")
+
+script.
+
+	$("document").ready(() => {
+		$("form").submit((event) => {
+			let email = $("#email").val()
+			let username = $("#username").val()
+			let password = $("#password").val()
+			let passwordCheck = $("#passwordCheck").val()
+			if(email === "" || username === "" || password === "" || passwordCheck === "") {
+				event.preventDefault()
+				alert("you have not filled out all fields correctly")
+			}
+			if(password !== passwordCheck) {
+				event.preventDefault()
+				alert("passwords do not match")
+			}
+		})
+	})
 
 style
 	include ../custom/main.css
